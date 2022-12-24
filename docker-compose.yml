@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:15.1-alpine
+    environment:
+      - POSTGRES_USER=piggybank
+      - POSTGRES_PASSWORD=unsecr3t
+    volumes:
+      - /var/lib/postgresql/data
